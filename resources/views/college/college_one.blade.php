@@ -7,81 +7,20 @@
             K.Ramakrishnan College of Engineering, Trichy :: KRCE
     </title>
 
-    <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="{{asset('assets/img/favicons/apple-icon-57x57.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="{{asset('assets/img/favicons/apple-icon-60x60.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="{{asset('assets/img/favicons/apple-icon-72x72.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="{{asset('assets/img/favicons/apple-icon-76x76.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="{{asset('assets/img/favicons/apple-icon-114x114.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="{{asset('assets/img/favicons/apple-icon-120x120.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="{{asset('assets/img/favicons/apple-icon-144x144.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="{{asset('assets/img/favicons/apple-icon-152x152.png')}}"
-        />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="{{asset('assets/img/favicons/apple-icon-180x180.png')}}"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="{{asset('assets/img/favicons/android-icon-192x192.png')}}"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="{{asset('assets/img/favicons/favicon-32x32.png')}}"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="{{asset('assets/img/favicons/favicon-96x96.png')}}"
-        />
+      
         <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="{{asset('assets/img/favicons/favicon-16x16.png')}}"
+            href="{{asset('assets/img/fav_icon.png')}}"
         />
         <link rel="manifest" />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta
             name="msapplication-TileImage"
-            content="{{asset('assets/img/favicons/ms-icon-144x144.png')}}"
+            content="{{asset('assets/img/fav_icon.png')}}"
         />
+
         <meta name="theme-color" content="#ffffff" />
         <link rel="preconnect" href="https://fonts.googleapis.com/" />
         
@@ -94,14 +33,19 @@
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
   
          <style>
-        .header-logo img{
+        .kr_logo{
+            width: 80px;
+            height: 80px;
+        }
+        .clg_logo{
             width: 180px;
+            height: 85px;
         }
     </style>
    </style>
 </head>
 <body>
-<div class="preloader">
+        <div class="preloader">
             <button class="th-btn style3 preloaderCls">Cancel Preloader</button>
             <div class="preloader-inner"><span class="loader"></span></div>
         </div>
@@ -523,16 +467,22 @@
             <div class="sticky-wrapper">
                 <div class="menu-area">
                     <div class="container">
-                        <div
-                            class="row align-items-center justify-content-between"
-                        >
-                            <div class="col-auto">
-                                <div class="header-logo">
-                                    <a href="index.html"
-                                        ><img class='logo'
-                                            src="{{asset('assets/custom/logo.png')}}"
-                                            alt="Edura"
-                                    /></a>
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto d-flex">
+                                <div class="header-logo me-5">
+                                    <a href="index.html"><img class='logo kr_logo' width="50" height="60" src="{{asset('assets/custom/kr_logo.png')}}" alt="Edura" /></a>
+                                </div>
+                                <div class="header-logo me-5">
+                                    <a href="index.html" ><img class='logo clg_logo' width="" src="{{asset('assets/custom/logo.png')}}" alt="Edura"/></a>
+                                </div>
+                                <div class="header-logo me-5">
+                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/clg_code.png')}}" alt="Edura" /></a>
+                                </div>
+                                <div class="header-logo me-5">
+                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/mba_img.png')}}" alt="Edura" /></a>
+                                </div>
+                                <div class="header-logo me-5">
+                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/naac_img.png')}}" alt="Edura" /></a>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -541,6 +491,7 @@
                                         <nav
                                             class="main-menu d-none d-lg-inline-block"
                                         >
+                                        
                                           <ul>
                                                 <li>
                                                     <a href="#about-sec"
@@ -616,6 +567,7 @@
                 </div>
             </div>
         </header>
+
         <div class="th-hero-wrapper hero-1" id="hero">
             <div
                 class="hero-slider-1 th-carousel"
@@ -629,7 +581,7 @@
                         class="th-hero-bg"
                         data-overlay="title"
                         data-opacity="8"
-                        data-bg-src="{{asset('assets/img/hero/hero_bg_1_1.jpg')}}"
+                        data-bg-src="{{asset('assets/img/hero/drone_view.jpeg')}}"
                     ></div>
                     <div class="container">
                         <div
@@ -714,7 +666,7 @@
                         class="th-hero-bg"
                         data-overlay="title"
                         data-opacity="8"
-                        data-bg-src="{{asset('assets/img/hero/hero_bg_1_2.jpg')}}"
+                        data-bg-src="{{asset('assets/img/hero/student_study.png')}}"
                     ></div>
                     <div class="container">
                         <div
@@ -799,7 +751,7 @@
                         class="th-hero-bg"
                         data-overlay="title"
                         data-opacity="8"
-                        data-bg-src="{{asset('assets/img/hero/hero_bg_1_3.jpg')}}"
+                        data-bg-src="{{asset('assets/img/hero/student_lab.png')}}"
                     ></div>
                     <div class="container">
                         <div
@@ -883,6 +835,7 @@
                 </div>
             </div>
         </div>
+
         <div class="space-top">
             <div class="container">
                 <div class="category-sec-wrap">
@@ -934,7 +887,7 @@
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >Web Development</a
+                                                    >Artificial Intelligence with Data Science</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -962,7 +915,7 @@
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >Digital Marketing</a
+                                                    >Artificial Intelligence with Machine Learning</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -983,14 +936,14 @@
                                     <div class="category-card">
                                         <div class="category-card_icon">
                                             <img
-                                                src="{{asset('assets/img/icon/cat-1_3.svg')}}"
+                                                src="{{asset('assets/img/icon/cat-1_1.svg')}}"
                                                 alt="image"
                                             />
                                         </div>
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >UI/UX Design</a
+                                                    >Information Technology</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -1018,7 +971,7 @@
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >Graphic Design</a
+                                                    >Electronics and Communication Engineering</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -1046,7 +999,7 @@
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >Web Development</a
+                                                    >Electrical and Electronics Engineering</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -1074,7 +1027,7 @@
                                         <div class="category-card_content">
                                             <h3 class="category-card_title">
                                                 <a href="course.html"
-                                                    >Digital Marketing</a
+                                                    >Computer Science and Engineering</a
                                                 >
                                             </h3>
                                             <p class="category-card_text">
@@ -1091,68 +1044,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="category-card">
-                                        <div class="category-card_icon">
-                                            <img
-                                                src="{{asset('assets/img/icon/cat-1_3.svg')}}"
-                                                alt="image"
-                                            />
-                                        </div>
-                                        <div class="category-card_content">
-                                            <h3 class="category-card_title">
-                                                <a href="course.html"
-                                                    >UI/UX Design</a
-                                                >
-                                            </h3>
-                                            <p class="category-card_text">
-                                                36+ Courses
-                                            </p>
-                                            <a
-                                                href="course-details.html"
-                                                class="th-btn"
-                                                >Learn More
-                                                <i
-                                                    class="fa-solid fa-arrow-right ms-1"
-                                                ></i
-                                            ></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-xl-4">
-                                    <div class="category-card">
-                                        <div class="category-card_icon">
-                                            <img
-                                                src="{{asset('assets/img/icon/cat-1_4.svg')}}"
-                                                alt="image"
-                                            />
-                                        </div>
-                                        <div class="category-card_content">
-                                            <h3 class="category-card_title">
-                                                <a href="course.html"
-                                                    >Graphic Design</a
-                                                >
-                                            </h3>
-                                            <p class="category-card_text">
-                                                24+ Courses
-                                            </p>
-                                            <a
-                                                href="course-details.html"
-                                                class="th-btn"
-                                                >Learn More
-                                                <i
-                                                    class="fa-solid fa-arrow-right ms-1"
-                                                ></i
-                                            ></a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{-- we complted --}}
         <div class="space overflow-hidden" id="about-sec">
             <div class="container">
                 <div class="row align-items-center">
@@ -1830,7 +1729,7 @@
             <div class="cta-img-1" data-overlay="title" data-opacity="8">
                 <img src="{{asset('assets/img/normal/cta_1_1.png')}}" alt="Image" />
                 <a
-                    href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                    href="https://www.youtube.com/watch?v=sukWav-EaLw"
                     class="play-btn style2 popup-video"
                     ><i class="fa-sharp fa-solid fa-play"></i
                 ></a>
@@ -3739,11 +3638,8 @@
                                 do eiusmod tempor eiusmod tempor incididunt ut
                                 labore et dolore magna aliqua.
                             </p>
-                            <form
-                                action="https://themeholy.com/html/edura/demo/mail.php"
-                                method="POST"
-                                class="contact-form ajax-contact"
-                            >
+                            <form id="contact_us_form" action="{{route('contact_us')}}" method ="POST" class="contact-form ajax-contact">
+                               @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -3755,6 +3651,7 @@
                                                 placeholder="Your Name*"
                                             />
                                             <i class="fal fa-user"></i>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -3829,14 +3726,12 @@
                                         </div>
                                     </div>
                                     <div class="form-btn col-12 mt-10">
-                                        <button class="th-btn">
-                                            Send Message<i
-                                                class="fas fa-long-arrow-right ms-2"
-                                            ></i>
+                                        <button type="submit" class="th-btn">Send Message<i class="fas fa-long-arrow-right ms-2"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <p class="form-messages mb-0 mt-3"></p>
+                                
                             </form>
                         </div>
                     </div>
@@ -3865,5 +3760,48 @@
         </div>
     
         @include('layouts.script')
+        <script>
+            $(document).ready(function(){
+               
+                $('#contact_us_form').validate({
+
+                        rules:{
+                            name: {
+                            required: true,
+                            minlength: 3
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        message: {
+                            required: true,
+                            minlength: 10
+                        }
+                    },
+
+                    messages:{
+                        name: {
+                        required: "Please enter your name",
+                        minlength: "Name must be at least 3 characters"
+                    },
+                    email: {
+                        required: "Please enter your email",
+                        email: "Enter a valid email (e.g., example@mail.com)"
+                    },
+                    message: {
+                        required: "Please enter a message",
+                        minlength: "Message must be at least 10 characters"
+                    }
+
+                    },
+                    submitHandler: function (form) {
+                        alert("Form submitted successfully!");
+                        form.submit(); // You can replace this with an AJAX request if needed
+                  }
+                });
+            });
+              
+        </script>
 </body>
 </html>
