@@ -33,18 +33,84 @@
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
   
          <style>
-        .kr_logo{
+        .kr_logo,.naac_logo{
             width: 80px;
             height: 80px;
         }
         .clg_logo{
-            width: 180px;
-            height: 85px;
+            width: 300px;
+            height: 105px !important;
+        }
+       .clg_code{
+            width: 80px;
+            height: 100px !important;
+       }
+        .sub_heading{
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--theme-color);
+            font-family: var(--title-font);
+            text-transform: uppercase;
+            margin-top: 5px;
+            margin-bottom: 2px;
+            display: block;
+
+        }
+        .text-intent2px{
+            text-indent: 2em;
+        }
+
+        /* placement logo profile */
+        .image-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 50px; /* Adjust size */
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            position: absolute;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .image-container img:nth-child(1) { left: 0px; }
+        .image-container img:nth-child(2) { left: 30px; }
+        .image-container img:nth-child(3) { left: 60px; }
+        .image-container img:nth-child(4) { left: 90px; }
+        .image-container img:nth-child(5) { left: 120px; }
+
+        .more-count {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: blue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            position: absolute;
+            left: 180px;
+            border: 3px solid white;
+        }
+        /* end */
+
+        .testi-area-1{
+            padding-top: 55px;
         }
     </style>
    </style>
 </head>
 <body>
+
         <div class="preloader">
             <button class="th-btn style3 preloaderCls">Cancel Preloader</button>
             <div class="preloader-inner"><span class="loader"></span></div>
@@ -393,7 +459,7 @@
                                 <li><a href="error.html">Error Page</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children">
+                        {{-- <li class="menu-item-has-children">
                             <a href="#">Blog</a>
                             <ul class="sub-menu">
                                 <li><a href="blog.html">Blog</a></li>
@@ -401,8 +467,8 @@
                                     <a href="blog-details.html">Blog Details</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        </li> --}}
+                        <li><a href="#contact-sec">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -469,20 +535,20 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-between">
                             <div class="col-auto d-flex">
-                                <div class="header-logo me-5">
-                                    <a href="index.html"><img class='logo kr_logo' width="50" height="60" src="{{asset('assets/custom/kr_logo.png')}}" alt="Edura" /></a>
+                                <div class="header-logo me-4">
+                                    <a href="index.html"><img class='logo kr_logo' style="width: 80px; height:90px" src="{{asset('assets/custom/kr_logo.png')}}" alt="KRCE" /></a>
                                 </div>
-                                <div class="header-logo me-5">
-                                    <a href="index.html" ><img class='logo clg_logo' width="" src="{{asset('assets/custom/logo.png')}}" alt="Edura"/></a>
+                                <div class="header-logo me-4" id=clg_logo"">
+                                    <a href="index.html" ><img class='logo clg_logo' src="{{asset('assets/custom/logo.png')}}" alt="KRCE"/></a>
                                 </div>
-                                <div class="header-logo me-5">
-                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/clg_code.png')}}" alt="Edura" /></a>
+                                <div class="header-logo me-4">
+                                    <a href="index.html"><img class='logo clg_code' width="90" src="{{asset('assets/custom/clg_code.png')}}" alt="KRCE" /></a>
                                 </div>
-                                <div class="header-logo me-5">
-                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/mba_img.png')}}" alt="Edura" /></a>
+                                <div class="header-logo me-4">
+                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/mba_img.png')}}" alt="KRCE" /></a>
                                 </div>
-                                <div class="header-logo me-5">
-                                    <a href="index.html"><img class='logo' width="90" src="{{asset('assets/custom/naac_img.png')}}" alt="Edura" /></a>
+                                <div class="header-logo me-4">
+                                    <a href="index.html"><img class='logo naac_logo' width="90" src="{{asset('assets/custom/naac_img.png')}}" alt="KRCE" /></a>
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -499,18 +565,18 @@
                                                     >
                                                 </li>
                                                 <li>
-                                                    <a href="#course-sec"
-                                                        >Course</a
+                                                    <a href="#event-sec"
+                                                        >Events</a
                                                     >
                                                 </li>
                                                 <li>
                                                     <a href="#team-sec"
-                                                        >Instructor</a
+                                                        >Management</a
                                                     >
                                                 </li>
-                                                <li>
+                                                {{-- <li>
                                                     <a href="#blog-sec">Blog</a>
-                                                </li>
+                                                </li> --}}
                                                 <li>
                                                     <a href="#contact-sec"
                                                         >Contact Us</a
@@ -550,7 +616,7 @@
                                                 <span class="badge">5</span>
                                             </button>
                                             <a
-                                                href="contact.html"
+                                                href="#contact-sec"
                                                 class="th-btn ml-25"
                                                 >Contact Us
                                                 <i
@@ -593,16 +659,15 @@
                                         class="hero-subtitle"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.1s"
-                                        ><span>35% OFF</span> LEARN FROM
-                                        TODAY</span
+                                        ><span>Vision</span></span
                                     >
                                     <h1
                                         class="hero-title text-white"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.4s"
                                     >
-                                        Education Is Create Better
-                                        <span class="text-theme">Future.</span>
+                                    “ To achieve a prominent position among the top technical institutions ”
+                                        <span class="text-theme"></span>
                                     </h1>
                                     <p
                                         class="hero-text"
@@ -620,9 +685,9 @@
                                         data-ani-delay="0.8s"
                                     >
                                         <a
-                                            href="contact.html"
+                                            href="#contact-sec"
                                             class="th-btn style3"
-                                            >Get Started<i
+                                            >Apply Now<i
                                                 class="fas fa-arrow-right ms-2"
                                             ></i
                                         ></a>
@@ -631,9 +696,10 @@
                             </div>
                             <div class="col-md-6 text-lg-end text-center">
                                 <div class="hero-img1">
-                                    <img
-                                        src="{{asset('assets/img/hero/hero_thumb_1_1.jpg')}}"
+                                    <img style="width:660px; height:660px"
+                                        src="{{asset('assets/img/hero/banner_img.png')}}"
                                         alt="hero"
+
                                     />
                                 </div>
                             </div>
@@ -674,30 +740,23 @@
                         >
                             <div class="col-md-6">
                                 <div class="hero-style1">
-                                    <span
-                                        class="hero-subtitle"
-                                        data-ani="slideinleft"
-                                        data-ani-delay="0.1s"
-                                        ><span>35% OFF</span> LEARN FROM
-                                        TODAY</span
-                                    >
+                                  
                                     <h1
                                         class="hero-title text-white"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.4s"
                                     >
-                                        Edura Leads To A Brighter
-                                        <span class="text-theme">Future.</span>
+                                    <span>
+                                        <span class="text-theme">Mission</span>
                                     </h1>
                                     <p
                                         class="hero-text"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.6s"
                                     >
-                                        Education can be thought of as the
-                                        transmission of a societys values and
-                                        accumulated knowledge. In this sense, it
-                                        is equivalent.
+                                    To bestow standard technical education par excellence through state of the art infrastructure, competent faculty and high ethical standards.
+                                    To nurture research and entrepreneurial skills among students in cutting edge technologies.
+                                    To provide education for developing high-quality professionals to transform the society
                                     </p>
                                     <div
                                         class="btn-group"
@@ -705,7 +764,7 @@
                                         data-ani-delay="0.8s"
                                     >
                                         <a
-                                            href="contact.html"
+                                            href="#contact-sec"
                                             class="th-btn style3"
                                             >Get Started<i
                                                 class="fas fa-arrow-right ms-2"
@@ -716,9 +775,10 @@
                             </div>
                             <div class="col-md-6 text-lg-end text-center">
                                 <div class="hero-img1">
-                                    <img
-                                        src="{{asset('assets/img/hero/hero_thumb_1_2.jpg')}}"
+                                    <img style="width:660px; height:660px"
+                                        src="{{asset('assets/img/hero/hero_banner_thumb.png')}}"
                                         alt="hero"
+                                        style="width:660x;height:660px;"
                                     />
                                 </div>
                             </div>
@@ -763,17 +823,16 @@
                                         class="hero-subtitle"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.1s"
-                                        ><span>35% OFF</span> LEARN FROM
-                                        TODAY</span
+                                        ><span>ABOUT KRCE</span> </span
                                     >
                                     <h1
                                         class="hero-title text-white"
                                         data-ani="slideinleft"
                                         data-ani-delay="0.4s"
                                     >
-                                        The Worlds Best Online Education
+                                        
                                         <span class="text-theme"
-                                            >Institute.</span
+                                            >Institute</span
                                         >
                                     </h1>
                                     <p
@@ -781,10 +840,7 @@
                                         data-ani="slideinleft"
                                         data-ani-delay="0.6s"
                                     >
-                                        Education can be thought of as the
-                                        transmission of the values and
-                                        accumulated knowledge of a society. In
-                                        this sense, it is equivalent.
+                                    Established in the year 2008 K. Ramakrishnan college of Engineering is a leading Engineering college affiliated to Anna University, Chennai, providing valuable courses. K.RAMAKRISHNAN COLLEGE OF ENGINEERING, TIRUCHIRAPALLI, is located in the famous temple town of Shri Samayapuram Mariyamman temple, on the sprawling campus of 30 acres with a panoramic and pleasant view.
                                     </p>
                                     <div
                                         class="btn-group"
@@ -792,7 +848,7 @@
                                         data-ani-delay="0.8s"
                                     >
                                         <a
-                                            href="contact.html"
+                                            href="#contact-sec"
                                             class="th-btn style3"
                                             >Get Started<i
                                                 class="fas fa-arrow-right ms-2"
@@ -803,8 +859,8 @@
                             </div>
                             <div class="col-md-6 text-lg-end text-center">
                                 <div class="hero-img1">
-                                    <img
-                                        src="{{asset('assets/img/hero/hero_thumb_1_3.jpg')}}"
+                                    <img  style="width:660px; height:660px"
+                                        src="{{asset('assets/img/gallery/Colleges/staffs/managements.jpeg')}}"
                                         alt="hero"
                                     />
                                 </div>
@@ -891,10 +947,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                56+ Courses
+                                                {{-- course count --}}
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -919,10 +975,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                50+ Courses
+                                                {{-- course count --}}
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -947,10 +1003,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                36+ Courses
+                                                
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -975,10 +1031,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                24+ Courses
+                                                {{-- course count --}}
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -1003,10 +1059,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                56+ Courses
+                                                {{-- course count --}}
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -1031,10 +1087,10 @@
                                                 >
                                             </h3>
                                             <p class="category-card_text">
-                                                50+ Courses
+                                                {{-- course count --}}
                                             </p>
                                             <a
-                                                href="course-details.html"
+                                                href="#"
                                                 class="th-btn"
                                                 >Learn More
                                                 <i
@@ -1060,8 +1116,10 @@
                             <div class="img1">
                                 <img
                                     class="tilt-active"
-                                    src="{{asset('assets/img/normal/about_1_1.png')}}"
+                                    
+                                    src="{{asset('assets/img/normal/about_bg-1.png')}}"
                                     alt="About"
+                                    style="width:444px;height:444px;object-fit: cover;"
                                 />
                             </div>
                             <div
@@ -1069,7 +1127,7 @@
                                 data-bg-src="{{asset('assets/img/normal/about_1_3.png')}}"
                             >
                                 <h3 class="about-grid_year">
-                                    <span class="counter-number">10</span>k<span
+                                    <span class="counter-number">5</span>k<span
                                         class="text-theme"
                                         >+</span
                                     >
@@ -1079,52 +1137,43 @@
                                 </p>
                             </div>
                             <div class="img2">
-                                <img
-                                    class="tilt-active"
-                                    src="{{asset('assets/img/normal/about_1_2.png')}}"
-                                    alt="About"
-                                />
+                                <img  class="tilt-active" src="{{asset('assets/img/hero/student_study.png')}}" alt="About"  style="width:340px;height:265x;object-fit: cover;"/>
                             </div>
-                            <div
-                                class="shape-mockup about-shape1 jump"
-                                data-left="-67px"
-                                data-bottom="0"
-                            >
-                                <img
-                                    src="{{asset('assets/img/normal/about_1_shape1.png')}}"
-                                    alt="img"
-                                />
+                            <div class="shape-mockup about-shape1 jump" data-left="-67px" data-bottom="0" >
+                                <img  src="{{asset('assets/img/normal/about_1_shape1.png')}}" alt="img" />
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="title-area mb-30">
                             <span class="sub-title"
-                                ><i class="fal fa-book me-2"></i> About Our
-                                University</span
+                                ><i class="fal fa-book me-2"></i> About Us</span
                             >
                             <h2 class="sec-title">
-                                Welcome to Edura University.
+                                Welcome to KRCE.
                             </h2>
                         </div>
                         <p class="mt-n2 mb-25">
-                            Collaboratively simplify user friendly networks
-                            after principle centered coordinate effective
-                            methods of empowerment distributed niche markets
-                            pursue market positioning web-readiness after
-                            resource sucking applications.
+                            Established in the year 2008 K. Ramakrishnan college of Engineering is a leading Engineering college affiliated to Anna University, Chennai, providing valuable courses. K.RAMAKRISHNAN COLLEGE OF ENGINEERING, TIRUCHIRAPALLI, is located in the famous temple town of Shri Samayapuram Mariyamman temple, on the sprawling campus of 30 acres with a panoramic and pleasant view.
                         </p>
-                        <p class="mb-30">
-                            Online education, also known as e-learning, is a
-                            method of learning that takes place over the
-                            internet. It offers individuals the opportunity to
-                            acquire knowledge, skills.
+                        <p>
+                            
+                            <span class="sub_heading"><i class="fal fa-book me-2"></i> Achievements</span>
+                              <p class='text-intent2px'>We achieve a prominent position among the top technical institutions</p>
+
+                            <span class="sub_heading"><i class="fal fa-book me-2"></i> Education</span>
+                            
+                            <p class='text-intent2px'>We provide education for developing high-quality professionals to transform the society</p>
+
+                            <span class="sub_heading"><i class="fal fa-book me-2"></i> Research</span>                           
+                            
+                            <p class='text-intent2px'> We nurture research and entrepreneurial skills among students in cutting edge technologies</p>
                         </p>
                         <div class="row align-items-center">
                             <div class="col-md-auto">
                                 <div class="about-grid_img mb-30 mb-md-0">
-                                    <img
-                                        src="{{asset('assets/img/normal/about_1_4.png')}}"
+                                    <img style="width: 210; height:103px"
+                                        src="{{asset('assets/img/gallery/Colleges/arch/gate.jpg')}}"
                                         alt="img"
                                     />
                                 </div>
@@ -1133,7 +1182,7 @@
                                 <div class="checklist">
                                     <ul>
                                         <li>
-                                            Get access to 4,000+ of our top
+                                            Get access of our top
                                             courses
                                         </li>
                                         <li>Popular topics to learn now</li>
@@ -1145,7 +1194,7 @@
                             </div>
                         </div>
                         <div class="btn-group mt-40">
-                            <a href="about.html" class="th-btn"
+                            <a href="#about-sec" class="th-btn"
                                 >About More<i
                                     class="fa-regular fa-arrow-right ms-2"
                                 ></i
@@ -1155,548 +1204,729 @@
                 </div>
             </div>
         </div>
-        <section
-            class="space"
-            data-bg-src="{{asset('assets/img/bg/course_bg_1.png')}}"
-            id="course-sec"
+      {{-- event here --}}
+      <section id="event-sec" class="space" data-bg-src="{{asset('assets/img/bg/event-bg_1.png')}}">
+        <div
+            class="shape-mockup event-shape1 jump"
+            data-top="0"
+            data-left="-60px"
         >
-            <div class="container">
-                <div class="mb-35 text-center text-md-start">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-md-8">
-                            <div class="title-area mb-md-0">
-                                <span class="sub-title"
-                                    ><i class="fal fa-book me-2"></i> Popular
-                                    Courses</span
-                                >
-                                <h2 class="sec-title">Our Popular Courses</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-auto">
-                            <a href="course.html" class="th-btn"
-                                >View All Courses<i
-                                    class="fa-solid fa-arrow-right ms-2"
-                                ></i
-                            ></a>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="row slider-shadow th-carousel course-slider-1"
-                    data-slide-show="4"
-                    data-ml-slide-show="3"
-                    data-lg-slide-show="3"
-                    data-md-slide-show="2"
-                    data-sm-slide-show="1"
-                    data-arrows="true"
+            <img src="{{asset('assets/img/team/team-shape_1_1.png')}}" alt="img" />
+        </div>
+        <div class="container">
+            <div class="title-area text-center">
+                <span class="sub-title"
+                    ><i class="fal fa-book me-2"></i> Fetaured Events</span
                 >
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_1.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 03 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Education Software and PHP and JS
-                                        System Script</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        8</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        60+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Max Alexix</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
+                <h2 class="sec-title">Our Upcoming Events</h2>
+            </div>
+            <div
+                class="row slider-shadow event-slider-1 th-carousel gx-70"
+                data-slide-show="3"
+                data-lg-slide-show="3"
+                data-md-slide-show="1"
+                data-sm-slide-show="1"
+                data-xs-slide-show="1"
+                data-arrows="true"
+            >
+
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img style="width:200px; height:200px"
+                                src="{{asset('assets/img/gallery/Colleges/events/event1.jpg')}}"
+                                alt="event"
+                            />
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src=""
+                                    />
+                                </div>
+                                 <div class="details">
+                                    {{-- <span class="author-name"
+                                        >KRCE</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p> --}}
+                                </div> 
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>Samayapuram, Trichy
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >KRCE</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
                                 <img
-                                    src="{{asset('assets/img/course/course_1_2.png')}}"
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
                                     alt="img"
                                 />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 02 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Learn Figma – UI/UX Design Essential
-                                        Training</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        9</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        50+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Kevin Perry</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_3.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 04 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Advanced Android 12 & Kotlin
-                                        Development Course</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        7</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        30+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Max Alexix</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_4.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 02 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >IT Statistics Data Science and Business
-                                        Analysis</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        10</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        20+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Kevin Perry</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_1.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 03 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Education Software and PHP and JS
-                                        System Script</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        8</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        60+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Max Alexix</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_2.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 02 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Learn Figma – UI/UX Design Essential
-                                        Training</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        9</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        50+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Kevin Perry</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_3.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 04 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >Advanced Android 12 & Kotlin
-                                        Development Course</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        7</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        30+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Max Alexix</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="course-box">
-                            <div class="course-img">
-                                <img
-                                    src="{{asset('assets/img/course/course_1_4.png')}}"
-                                    alt="img"
-                                />
-                                <span class="tag"
-                                    ><i class="fas fa-clock"></i> 02 WEEKS</span
-                                >
-                            </div>
-                            <div class="course-content">
-                                <div class="course-rating">
-                                    <div
-                                        class="star-rating"
-                                        role="img"
-                                        aria-label="Rated 4.00 out of 5"
-                                    >
-                                        <span style="width: 79%"
-                                            >Rated
-                                            <strong class="rating">4.00</strong>
-                                            out of 5</span
-                                        >
-                                    </div>
-                                    (4.7)
-                                </div>
-                                <h3 class="course-title">
-                                    <a href="course-details.html"
-                                        >IT Statistics Data Science and Business
-                                        Analysis</a
-                                    >
-                                </h3>
-                                <div class="course-meta">
-                                    <span
-                                        ><i class="fal fa-file"></i>Lesson
-                                        10</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-user"></i>Students
-                                        20+</span
-                                    >
-                                    <span
-                                        ><i class="fal fa-chart-simple"></i
-                                        >Beginner</span
-                                    >
-                                </div>
-                                <div class="course-author">
-                                    <div class="author-info">
-                                        <img
-                                            src="{{asset('assets/img/course/author.png')}}"
-                                            alt="author"
-                                        />
-                                        <a
-                                            href="course.html"
-                                            class="author-name"
-                                            >Kevin Perry</a
-                                        >
-                                    </div>
-                                    <div class="offer-tag">Free</div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img style="width:200px; height:200px"
+                                src="{{asset('assets/img/gallery/Colleges/events/event2.jpg')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src=""
+                                    />
+                                </div>
+                                 <div class="details">
+                                    {{-- <span class="author-name"
+                                        >KRCE</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p> --}}
+                                </div> 
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>Samayapuram, Trichy
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >KRCE</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img style="width:200px; height:200px"
+                                src="{{asset('assets/img/gallery/Colleges/events/event3.jpg')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src=""
+                                    />
+                                </div>
+                                 <div class="details">
+                                    {{-- <span class="author-name"
+                                        >KRCE</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p> --}}
+                                </div> 
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>Samayapuram, Trichy
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >KRCE</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img style="width:200px; height:200px"
+                                src="{{asset('assets/img/gallery/Colleges/events/event5.jpg')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src=""
+                                    />
+                                </div>
+                                 <div class="details">
+                                    {{-- <span class="author-name"
+                                        >KRCE</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p> --}}
+                                </div> 
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>Samayapuram, Trichy
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >KRCE</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-2.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author2.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Adam Jhon</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Hilton, NewYork,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>10:00 am -
+                                    11:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Embrace the world of online
+                                    education</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-3.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author3.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Michael Rich</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>147,
+                                    Green Road
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>11:00 am -
+                                    12:00 pm
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Gain insights into how parents can
+                                    support</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-4.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author4.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Anadi Juila</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Kipling, London,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Exploring New Frontiers in Education</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-5.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author1.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >David Smith</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Paris, France,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>10:00 am -
+                                    11:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >A Journey of Educational Excellence</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-6.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author2.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Adam Jhon</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Broly, NewYork,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>11:00 am -
+                                    12:00 pm
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Unleashing the Potential of
+                                    Education</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-7.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author3.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Michael Rich</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Easton, USA,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>08:00 am -
+                                    10:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Preparing Students for Tomorrow,s
+                                    Challenges</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-8.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author4.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >Anadi Juila</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i
+                                    >Sharjah, UAE,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>10:00 am -
+                                    11:00 am
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Embracing Technology in Education</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="event-card">
+                        <div
+                            class="event-card_img"
+                            data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
+                        >
+                            <img
+                                src="{{asset('assets/img/event/event_img-9.png')}}"
+                                alt="event"
+                            />
+                        </div>
+                        <div class="event-card_content">
+                            <div class="event-author">
+                                <div class="avater">
+                                    <img
+                                        src="{{asset('assets/img/event/event-author1.png')}}"
+                                        alt="avater"
+                                    />
+                                </div>
+                                <div class="details">
+                                    <span class="author-name"
+                                        >David Smith</span
+                                    >
+                                    <p class="author-desig">
+                                        Chief - Executive
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="event-meta">
+                                <p>
+                                    <i class="fal fa-location-dot"></i>Al
+                                    Road, Dubai,
+                                </p>
+                                <p>
+                                    <i class="fal fa-clock"></i>11:00 am -
+                                    12:00 pm
+                                </p>
+                            </div>
+                            <h3 class="event-card_title">
+                                <a href="event-details.html"
+                                    >Redefining Learning for the 21st
+                                    Century</a
+                                >
+                            </h3>
+                            <div class="event-card_bottom">
+                                <a href="event-details.html" class="th-btn"
+                                    >View Event
+                                    <i class="far fa-arrow-right ms-1"></i
+                                ></a>
+                            </div>
+                            <div class="event-card-shape jump">
+                                <img
+                                    src="{{asset('assets/img/event/event-box-shape1.png')}}"
+                                    alt="img"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>--}}
+            </div> 
+        </div>
+    </section>
+
         <div class="cta-area-1" data-bg-src="{{asset('assets/img/bg/cta-bg1.png')}}">
             <div class="container">
                 <div class="row align-items-center justify-content-between">
@@ -1710,14 +1940,13 @@
                             </div>
                             <div class="cta-content">
                                 <h2 class="cta-title sec-title">
-                                    Get Online Courses
+                                    Admission Now
                                 </h2>
                                 <p class="cta-text">
-                                    Met consectetur adipiscing sed eiustempore
-                                    dolore
+                                    Education is a journey, and every step, no matter how hard, takes me forward.
                                 </p>
                             </div>
-                            <a href="about.html" class="th-btn style8"
+                            <a href="#contact-sec" class="th-btn style8"
                                 >Join With Us<i
                                     class="fas fa-arrow-right ms-1"
                                 ></i
@@ -1755,30 +1984,41 @@
                 <img src="{{asset('assets/img/normal/wcu_1_shape2.png')}}" alt="img" />
             </div>
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row">
                     <div class="col-xl-6">
                         <div class="wcu-img-1">
                             <div class="img1">
-                                <img
-                                    src="{{asset('assets/img/normal/wcu_1_1.png')}}"
+                                <img 
+                                    src="{{asset('assets/img/gallery/Colleges/students/std2.png')}}"
                                     alt="img"
+                                     style="width:620px;height:474px;object-fit: cover;"
                                 />
                             </div>
                             <div class="student-count jump-reverse">
                                 <h5 class="title">
                                     <span class="text-theme"
-                                        ><span class="counter-number">10</span
-                                        >k+</span
+                                        ><span class="counter-number">100</span
+                                        >+</span
                                     >
-                                    Active Students
+                                    Active Companies
                                 </h5>
-                                <img
+                                {{-- <img
                                     src="{{asset('assets/img/normal/student-group_1_1.png')}}"
                                     alt="img"
-                                />
+                                /> --}}
+                                
+                                <div class="image-container">
+                                    <img src="{{ asset('assets/img/gallery/Colleges/placement/company1.png') }}" alt="Company 1">
+                                    <img src="{{ asset('assets/img/gallery/Colleges/placement/company2.png') }}" alt="Company 2">
+                                    <img src="{{ asset('assets/img/gallery/Colleges/placement/company3.png') }}" alt="Company 3">
+                                    <img src="{{ asset('assets/img/gallery/Colleges/placement/company4.png') }}" alt="Company 4">
+                                    <img src="{{ asset('assets/img/gallery/Colleges/placement/company5.png') }}" alt="Company 5">
+                                    <div class="more-count">100+</div>
+                                </div>
+
                             </div>
                             <div class="text-end">
-                                <a class="th-btn mt-30" href="contact.html"
+                                <a class="th-btn mt-30" href="#contact-sec"
                                     >Get Started
                                     <i class="far fa-arrow-right ms-1"></i
                                 ></a>
@@ -1793,17 +2033,41 @@
                                     US</span
                                 >
                                 <h2 class="sec-title">
-                                    Thousands Of Experts Around The World Ready
+                                    More Experts Staff
                                     To Help.
                                 </h2>
                                 <p class="sec-text mt-20">
-                                    Synergistically visualize alternative
-                                    content before cross functional core
-                                    Rapidiously administra standardized value
-                                    via focused benefits. Rapidiously redefine
-                                    highly efficient niche markets with
-                                    plug-and-play materials professionally seize
-                                    client centric solutions
+
+                                    
+                                        At KRCE, we are committed to excellence in education, innovation, and student success. Here’s why we stand out:
+                            
+                                        <span class="sub_heading">  ✅ Top-Quality Education</span>
+                                          <p class='text-intent2px'>Our rigorous academic programs are designed to equip students with real-world skills and knowledge.</p>
+            
+                                        <span class="sub_heading"> ✅ Experienced Faculty</span>
+                                        
+                                        <p class='text-intent2px'>Learn from industry experts and experienced educators who are dedicated to your success.</p>
+            
+                                        <span class="sub_heading"> ✅ State-of-the-Art Facilities</span>                           
+                                        
+                                        <p class='text-intent2px'>Modern classrooms, advanced labs, and a well-stocked library provide the perfect learning environment.</p>
+                                       
+                                        <span class="sub_heading"> ✅ Career Opportunities</span>
+                                        
+                                        <p class='text-intent2px'>Strong industry connections, internship programs, and career counseling to help you land your dream job.</p>
+            
+                                        <span class="sub_heading"> ✅ Global Exposure</span>                           
+                                        
+                                        <p class='text-intent2px'>International collaborations, exchange programs, and opportunities to connect with students worldwide.</p>
+                               
+                                        <span class="sub_heading"> ✅ Vibrant Campus Life</span>                           
+                                        
+                                        <p class='text-intent2px'>A diverse community with clubs, cultural events, and extracurricular activities that enhance personal growth.</p>
+                                       
+                                        <h4>Join us at KRCE and take the first step toward a successful future!</h4>
+                                    
+                                    
+                                    
                                 </p>
                             </div>
                             <div class="row gy-4">
@@ -1884,52 +2148,52 @@
                     <div class="col-sm-6 col-xl-3 counter-card-wrap">
                         <div class="counter-card">
                             <h2 class="counter-card_number">
-                                <span class="counter-number">3.9</span>k<span
+                                <span class="counter-number">4.5</span>k<span
                                     class="fw-normal"
                                     >+</span
                                 >
                             </h2>
                             <p class="counter-card_text">
-                                <strong>Successfully</strong> Trained
+                                <strong>Placement</strong> Students
                             </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3 counter-card-wrap">
                         <div class="counter-card">
                             <h2 class="counter-card_number">
-                                <span class="counter-number">15.8</span>k<span
+                                <span class="counter-number">5</span>k<span
                                     class="fw-normal"
                                     >+</span
                                 >
                             </h2>
                             <p class="counter-card_text">
-                                <strong>Classes</strong> Completed
+                                <strong>Number Of Active</strong> Students
                             </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3 counter-card-wrap">
                         <div class="counter-card">
                             <h2 class="counter-card_number">
-                                <span class="counter-number">97.5</span>k<span
+                                <span class="counter-number">150</span><span
                                     class="fw-normal"
                                     >+</span
                                 >
                             </h2>
                             <p class="counter-card_text">
-                                <strong>Satisfaction</strong> Rate
+                                <strong>Number Of Active</strong> Staffs
                             </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3 counter-card-wrap">
                         <div class="counter-card">
                             <h2 class="counter-card_number">
-                                <span class="counter-number">100.2</span>k<span
+                                <span class="counter-number">40</span><span
                                     class="fw-normal"
                                     >+</span
                                 >
                             </h2>
                             <p class="counter-card_text">
-                                <strong>Students</strong> Community
+                                <strong>subjects over 4 years </strong> (8 semesters)
                             </p>
                         </div>
                     </div>
@@ -1970,27 +2234,24 @@
                 <div class="cta-wrap2">
                     <div class="title-area text-center mb-35">
                         <span class="sub-title"
-                            ><i class="fal fa-book me-2"></i>Are You Ready For
-                            This Offer</span
+                            ><i class="fal fa-book me-2"></i>Are You Ready for This Offer?</span
                         >
                         <h2 class="sec-title text-white">
-                            40% Offer First
+                            🎉 40% Off for the First 100 Students! 🎉
                             <span class="text-theme2">100 Student’s</span> For
                             Featured<br /><span class="fw-normal"
                                 >Topics by Education Category</span
                             >
                         </h2>
                         <p class="cta-text">
-                            Get unlimited access to 6,000+ of Udemy’s top
-                            courses for your team. Learn and improve skills
-                            across business, tec, design, and more.
-                        </p>
+                            Unlock featured topics in the education category and get unlimited access to 6,000+ of Udemy’s top courses for your institution. 🚀
+                        </p>    
                     </div>
                     <div class="btn-group justify-content-center">
-                        <a href="about.html" class="th-btn style3"
+                        <a href="#contact-sec" class="th-btn style3"
                             >Join With Us<i class="fas fa-arrow-right ms-2"></i
                         ></a>
-                        <a href="contact.html" class="th-btn style2"
+                        <a href="#contact-sec" class="th-btn style2"
                             >Become A Teacher<i
                                 class="fas fa-arrow-right ms-2"
                             ></i
@@ -2040,33 +2301,28 @@
                     <div class="col-xl-6 mb-40 mb-xl-0">
                         <div class="title-area mb-30">
                             <span class="sub-title"
-                                ><i class="fal fa-book me-2"></i> Our
-                                Instructor</span
+                                ><i class="fal fa-book me-2"></i> Management</span
                             >
                             <h2 class="sec-title">
-                                Meet Our Expert Instructor
+                                Meet Our Founders
                             </h2>
                             <p class="sec-text mt-20">
-                                Graduates of XYZ University have achieved
-                                remarkable success in their chosen fields, with
-                                many going on to pursue advanced degrees, secure
-                                fulfilling careers, and make valuable
-                                contributions to their communities.
+                                At KRCE, our leadership team is dedicated to shaping the future of education with a vision for excellence and innovation. Meet the visionaries behind our institution.
                             </p>
                             <p class="sec-text">
-                                The university takes pride in its alumni
+                                The institution takes pride in its alumni
                                 network, which serves as a testament to the
                                 quality of education and the opportunities
-                                provided by the institution.
+                                provided by the Autonomous institution.
                             </p>
                         </div>
                         <div class="btn-group mt-30">
-                            <a href="course.html" class="th-btn"
+                            {{-- <a href="course.html" class="th-btn"
                                 >Explore Courses<i
                                     class="fas fa-arrow-right ms-2"
                                 ></i
-                            ></a>
-                            <a href="contact.html" class="th-btn style7"
+                            ></a> --}}
+                            <a href="#contact-sec" class="th-btn style7"
                                 >Contact Us<i
                                     class="fas fa-arrow-right ms-2"
                                 ></i
@@ -2079,10 +2335,9 @@
                         >
                             <div class="team-img-wrap">
                                 <div class="team-img">
-                                    <img
-                                        src="{{asset('assets/img/team/team_1_1.jpg')}}"
-                                        alt="Team"
-                                    />
+                                    {{-- founder --}}
+
+                                    <img style="width:340px; height:240px;" src="{{asset('assets/img/gallery/Colleges/staffs/krce_owner.jpg')}}"  alt="Team" />
                                 </div>
                             </div>
                             <div class="team-hover-wrap">
@@ -2116,28 +2371,29 @@
                                 <div class="team-content">
                                     <h3 class="team-title">
                                         <a href="team-details.html"
-                                            >Hirmar Ubunti</a
+                                            >Mr.M.Kumarasamy</a
                                         >
                                     </h3>
-                                    <span class="team-desig">Instructor</span>
+                                    <span class="team-desig">Owner</span>
                                 </div>
                                 <div class="team-info">
-                                    <span
+                                    {{-- <span
                                         ><i class="fal fa-file-check"></i>2
                                         Courses</span
                                     >
                                     <span
                                         ><i class="fa-light fa-users"></i
                                         >Students 60+</span
-                                    >
+                                    > --}}
                                 </div>
                             </div>
                         </div>
                         <div class="team-card team-card-1-1">
                             <div class="team-img-wrap">
                                 <div class="team-img">
-                                    <img
-                                        src="{{asset('assets/img/team/team_1_2.jpg')}}"
+                                    {{-- Director --}}
+                                    <img  style="width:340px; height:250px;" 
+                                        src="{{asset('assets/img/gallery/Colleges/staffs/KRCE_ed.jpg')}}"
                                         alt="Team"
                                     />
                                 </div>
@@ -2173,22 +2429,22 @@
                                 <div class="team-content">
                                     <h3 class="team-title">
                                         <a href="team-details.html"
-                                            >Marvin McKinney</a
+                                            >Dr.S.Kuppusamy</a
                                         >
                                     </h3>
                                     <span class="team-desig"
-                                        >Founder & CEO</span
+                                        >Executive Director</span
                                     >
                                 </div>
                                 <div class="team-info">
-                                    <span
+                                    {{-- <span
                                         ><i class="fal fa-file-check"></i>3
                                         Courses</span
                                     >
                                     <span
                                         ><i class="fa-light fa-users"></i
                                         >Students 50+</span
-                                    >
+                                    > --}}
                                 </div>
                             </div>
                         </div>
@@ -2197,8 +2453,9 @@
                         <div class="team-card team-card-1-2 mt-md-0">
                             <div class="team-img-wrap">
                                 <div class="team-img">
-                                    <img
-                                        src="{{asset('assets/img/team/team_1_3.jpg')}}"
+                                    {{-- founder --}}
+                                    <img style="width:340px; height:250px;" 
+                                        src="{{asset('assets/img/gallery/Colleges/staffs/krce_chairman.jpg')}}"
                                         alt="Team"
                                     />
                                 </div>
@@ -2234,34 +2491,32 @@
                                 <div class="team-content">
                                     <h3 class="team-title">
                                         <a href="team-details.html"
-                                            >Courtney Henry</a
+                                            >Dr.K.Ramakrishnan</a
                                         >
                                     </h3>
                                     <span class="team-desig"
-                                        >Junior Instructor</span
+                                        >Founder & Chairman</span
                                     >
                                 </div>
                                 <div class="team-info">
-                                    <span
+                                    {{-- <span
                                         ><i class="fal fa-file-check"></i>4
                                         Courses</span
                                     >
                                     <span
                                         ><i class="fa-light fa-users"></i
                                         >Students 30+</span
-                                    >
+                                    > --}}
                                 </div>
                             </div>
                         </div>
                         <div
                             class="team-card team-card-1-2 team-card-1-2-active"
                         >
+                        {{-- primicple --}}
                             <div class="team-img-wrap">
                                 <div class="team-img">
-                                    <img
-                                        src="{{asset('assets/img/team/team_1_4.jpg')}}"
-                                        alt="Team"
-                                    />
+                                    <img style="width:340px; height:250px;" src="{{asset('assets/img/gallery/Colleges/staffs/principal_new.jpg')}}" alt="Team" />
                                 </div>
                             </div>
                             <div class="team-hover-wrap">
@@ -2295,22 +2550,22 @@
                                 <div class="team-content">
                                     <h3 class="team-title">
                                         <a href="team-details.html"
-                                            >Brooklyn Simmons</a
+                                            >Dr.D.Srinivasan</a
                                         >
                                     </h3>
                                     <span class="team-desig"
-                                        >Senior Instructor</span
+                                        >Principal</span
                                     >
                                 </div>
                                 <div class="team-info">
-                                    <span
+                                    {{-- <span
                                         ><i class="fal fa-file-check"></i>4
                                         Courses</span
                                     >
                                     <span
                                         ><i class="fa-light fa-users"></i
                                         >Students 70+</span
-                                    >
+                                    > --}}
                                 </div>
                             </div>
                         </div>
@@ -2318,562 +2573,8 @@
                 </div>
             </div>
         </div>
-        <section class="space" data-bg-src="{{asset('assets/img/bg/event-bg_1.png')}}">
-            <div
-                class="shape-mockup event-shape1 jump"
-                data-top="0"
-                data-left="-60px"
-            >
-                <img src="{{asset('assets/img/team/team-shape_1_1.png')}}" alt="img" />
-            </div>
-            <div class="container">
-                <div class="title-area text-center">
-                    <span class="sub-title"
-                        ><i class="fal fa-book me-2"></i> Fetaured Events</span
-                    >
-                    <h2 class="sec-title">Our Upcoming Events</h2>
-                </div>
-                <div
-                    class="row slider-shadow event-slider-1 th-carousel gx-70"
-                    data-slide-show="3"
-                    data-lg-slide-show="3"
-                    data-md-slide-show="1"
-                    data-sm-slide-show="1"
-                    data-xs-slide-show="1"
-                    data-arrows="true"
-                >
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-1.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author1.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >David Smith</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i>259,
-                                        NewYork,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>08:00 am -
-                                        10:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >What Soul Can Tech Us About Web
-                                        Design</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-2.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author2.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Adam Jhon</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Hilton, NewYork,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>10:00 am -
-                                        11:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Embrace the world of online
-                                        education</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-3.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author3.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Michael Rich</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i>147,
-                                        Green Road
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>11:00 am -
-                                        12:00 pm
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Gain insights into how parents can
-                                        support</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-4.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author4.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Anadi Juila</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Kipling, London,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>08:00 am -
-                                        10:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Exploring New Frontiers in Education</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-5.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author1.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >David Smith</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Paris, France,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>10:00 am -
-                                        11:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >A Journey of Educational Excellence</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-6.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author2.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Adam Jhon</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Broly, NewYork,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>11:00 am -
-                                        12:00 pm
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Unleashing the Potential of
-                                        Education</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-7.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author3.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Michael Rich</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Easton, USA,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>08:00 am -
-                                        10:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Preparing Students for Tomorrow,s
-                                        Challenges</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-8.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author4.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >Anadi Juila</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i
-                                        >Sharjah, UAE,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>10:00 am -
-                                        11:00 am
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Embracing Technology in Education</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-xl-4">
-                        <div class="event-card">
-                            <div
-                                class="event-card_img"
-                                data-mask-src="{{asset('assets/img/event/event_img-shape.png')}}"
-                            >
-                                <img
-                                    src="{{asset('assets/img/event/event_img-9.png')}}"
-                                    alt="event"
-                                />
-                            </div>
-                            <div class="event-card_content">
-                                <div class="event-author">
-                                    <div class="avater">
-                                        <img
-                                            src="{{asset('assets/img/event/event-author1.png')}}"
-                                            alt="avater"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <span class="author-name"
-                                            >David Smith</span
-                                        >
-                                        <p class="author-desig">
-                                            Chief - Executive
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="event-meta">
-                                    <p>
-                                        <i class="fal fa-location-dot"></i>Al
-                                        Road, Dubai,
-                                    </p>
-                                    <p>
-                                        <i class="fal fa-clock"></i>11:00 am -
-                                        12:00 pm
-                                    </p>
-                                </div>
-                                <h3 class="event-card_title">
-                                    <a href="event-details.html"
-                                        >Redefining Learning for the 21st
-                                        Century</a
-                                    >
-                                </h3>
-                                <div class="event-card_bottom">
-                                    <a href="event-details.html" class="th-btn"
-                                        >View Event
-                                        <i class="far fa-arrow-right ms-1"></i
-                                    ></a>
-                                </div>
-                                <div class="event-card-shape jump">
-                                    <img
-                                        src="{{asset('assets/img/event/event-box-shape1.png')}}"
-                                        alt="img"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="space-top">
+       
+        <div class="">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -2887,7 +2588,7 @@
                             <h2 class="sec-title mb-0">
                                 We Have More Than
                                 <span class="text-theme"
-                                    ><span class="counter-number">4263</span
+                                    ><span class="counter-number">50</span
                                     >+</span
                                 >
                                 Global Partners
@@ -2897,61 +2598,36 @@
                     <div class="col-lg-6">
                         <div class="client-wrap text-lg-end text-center">
                             <div class="row gy-40">
-                                <div class="col-3">
-                                    <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_1.png')}}"
-                                            alt="img"
-                                    /></a>
+                                <div class="col-3"> 
+                                    <a href="blog.html" class="client-thumb"><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company1.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_2.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company2.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_3.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company3.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_4.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company4.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_5.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company5.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_6.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company6.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_7.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company7.png')}}"  alt="img"/></a>
                                 </div>
                                 <div class="col-3">
                                     <a href="blog.html" class="client-thumb"
-                                        ><img
-                                            src="{{asset('assets/img/client/cilent_1_8.png')}}"
-                                            alt="img"
-                                    /></a>
+                                        ><img style="width:87px; height:87px" src="{{asset('assets/img/gallery/Colleges/placement/company8.png')}}"  alt="img"/></a>
                                 </div>
                             </div>
                         </div>
@@ -2959,7 +2635,7 @@
                 </div>
             </div>
         </div>
-        <section class="cta-area-3 space-top">
+        {{-- <section class="cta-area-3 space-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 mb-30 mb-lg-0">
@@ -2977,7 +2653,7 @@
                                     Skills
                                 </h4>
                             </div>
-                            <a href="contact.html" class="th-btn style8"
+                            <a href="#contact-sec" class="th-btn style8"
                                 >Join With Us<i
                                     class="fas fa-arrow-right ms-2"
                                 ></i
@@ -2999,7 +2675,7 @@
                                     Exploration
                                 </h4>
                             </div>
-                            <a href="contact.html" class="th-btn style8"
+                            <a href="#contact-sec" class="th-btn style8"
                                 >Join With Us<i
                                     class="fas fa-arrow-right ms-2"
                                 ></i
@@ -3008,7 +2684,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <section
             class="testi-area-1 overflow-hidden space-bottom"
             data-bg-src="{{asset('assets/img/bg/testi_bg_1.png')}}"
@@ -3040,7 +2716,7 @@
                         Testimonials</span
                     >
                     <h2 class="sec-title">
-                        Students Say’s About Our University
+                        Students Say’s About Our College
                     </h2>
                 </div>
                 <div class="row">
@@ -3074,23 +2750,134 @@
                                     <div class="testi-box_content">
                                         <div class="testi-box_img">
                                             <img
-                                                src="{{asset('assets/img/testimonial/testi_1_1.jpg')}}"
+                                                src=""
                                                 alt="Avater"
                                             />
                                         </div>
                                         <p class="testi-box_text">
-                                            “Quickly maximize visionary
-                                            solutions after mission critical
-                                            action items productivate premium
-                                            portals for impactful -services
-                                            stinctively negotiate enabled niche
-                                            markets via growth strategies”
+
+                                            “Four years at K. Ramakrishnan College of Engineering have been a whirlwind of labs, crackling circuits, exams, and the company of passionate peers. As an Electrical and Electronics Engineering student; I’ve probed into the world of power grids and microchips, pushing boundaries with every subject. But KRCE wasn’t just about academics. Furthermore, from presentation days to symposiums, I found out what I’m good at; also, made lifelong friendships, and learned the art of resourcefulness like a true engineer.”
+
                                         </p>
                                     </div>
                                     <div class="testi-box_bottom">
                                         <div>
                                             <h3 class="testi-box_name">
-                                                David H. Smith
+                                                Deebiga R
+                                            </h3>
+                                            <span class="testi-box_desig"
+                                                >EEE Student</span
+                                            >
+                                        </div>
+                                        <div class="testi-box_review">
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            (4.7)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="testi-box">
+                                    <div class="testi-box-bg-shape">
+                                        <svg
+                                            width="150"
+                                            height="137"
+                                            viewBox="0 0 150 137"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M0 9.99951C0 4.47666 4.47715 -0.000488281 10 -0.000488281H140C145.523 -0.000488281 150 4.47666 150 9.99951V10.5803C150 13.3951 148.814 16.0796 146.732 17.9747L18.8619 134.394C17.0205 136.07 14.6199 137 12.1297 137H10C4.47715 137 0 132.522 0 127V9.99951Z"
+                                                fill="#0D5EF4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="testi-box_content">
+                                        <div class="testi-box_img">
+                                            <img
+                                                src=""
+                                                alt="Avater"
+                                            />
+                                        </div>
+                                        <p class="testi-box_text">
+                                            “Looking back on my time at K. Ramakrishnan College of Engineering (KRCE), I realize how much the place has influenced me. In fact, KRCE provided a space for personal and intellectual growth. In addition, the staff were our mentors and also friends, always there to help with academics or to offer advice. Looking ahead, I’m grateful for these valuable experiences; and, KRCE has also equipped me with life lessons like patience, self-reliance, and the strength to face challenges.”
+                                        </p>
+                                    </div>
+                                    <div class="testi-box_bottom">
+                                        <div>
+                                            <h3 class="testi-box_name">
+                                                Nivetha S 
+                                            </h3>
+                                            <span class="testi-box_desig"
+                                                >Artificial Intelligence and Data Science</span
+                                            >
+                                        </div>
+                                        <div class="testi-box_review">
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            <i
+                                                class="fa-solid fa-star-sharp"
+                                            ></i>
+                                            (4.7)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="testi-box">
+                                    <div class="testi-box-bg-shape">
+                                        <svg
+                                            width="150"
+                                            height="137"
+                                            viewBox="0 0 150 137"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M0 9.99951C0 4.47666 4.47715 -0.000488281 10 -0.000488281H140C145.523 -0.000488281 150 4.47666 150 9.99951V10.5803C150 13.3951 148.814 16.0796 146.732 17.9747L18.8619 134.394C17.0205 136.07 14.6199 137 12.1297 137H10C4.47715 137 0 132.522 0 127V9.99951Z"
+                                                fill="#0D5EF4"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="testi-box_content">
+                                        <div class="testi-box_img">
+                                            <img
+                                                src=""
+                                                alt="Avater"
+                                            />
+                                        </div>
+                                        <p class="testi-box_text">
+                                            “The campus is more than just buildings, it’s a commitment to quality education with well-equipped labs for hands-on learning. The place stands out for its excellent facilities and an easy transport. What really makes my college special is its placement training programs, refining not just technical skills but also preparing us for the professional world. As I go through my B. Tech I.T. program, K Ramakrishnan College of Engineering remains a key driver for my learning and personal development.”
+                                        </p>
+                                    </div>
+                                    <div class="testi-box_bottom">
+                                        <div>
+                                            <h3 class="testi-box_name">
+                                                Nigan. S
                                             </h3>
                                             <span class="testi-box_desig"
                                                 >IT Student</span
@@ -3117,198 +2904,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="testi-box">
-                                    <div class="testi-box-bg-shape">
-                                        <svg
-                                            width="150"
-                                            height="137"
-                                            viewBox="0 0 150 137"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M0 9.99951C0 4.47666 4.47715 -0.000488281 10 -0.000488281H140C145.523 -0.000488281 150 4.47666 150 9.99951V10.5803C150 13.3951 148.814 16.0796 146.732 17.9747L18.8619 134.394C17.0205 136.07 14.6199 137 12.1297 137H10C4.47715 137 0 132.522 0 127V9.99951Z"
-                                                fill="#0D5EF4"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div class="testi-box_content">
-                                        <div class="testi-box_img">
-                                            <img
-                                                src="{{asset('assets/img/testimonial/testi_1_2.jpg')}}"
-                                                alt="Avater"
-                                            />
-                                        </div>
-                                        <p class="testi-box_text">
-                                            “Quickly maximize visionary
-                                            solutions after mission critical
-                                            action items productivate premium
-                                            portals for impactful -services
-                                            stinctively negotiate enabled niche
-                                            markets via growth strategies”
-                                        </p>
-                                    </div>
-                                    <div class="testi-box_bottom">
-                                        <div>
-                                            <h3 class="testi-box_name">
-                                                Zara Head Milan
-                                            </h3>
-                                            <span class="testi-box_desig"
-                                                >Regular Student</span
-                                            >
-                                        </div>
-                                        <div class="testi-box_review">
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            (4.7)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="testi-box">
-                                    <div class="testi-box-bg-shape">
-                                        <svg
-                                            width="150"
-                                            height="137"
-                                            viewBox="0 0 150 137"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M0 9.99951C0 4.47666 4.47715 -0.000488281 10 -0.000488281H140C145.523 -0.000488281 150 4.47666 150 9.99951V10.5803C150 13.3951 148.814 16.0796 146.732 17.9747L18.8619 134.394C17.0205 136.07 14.6199 137 12.1297 137H10C4.47715 137 0 132.522 0 127V9.99951Z"
-                                                fill="#0D5EF4"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div class="testi-box_content">
-                                        <div class="testi-box_img">
-                                            <img
-                                                src="{{asset('assets/img/testimonial/testi_1_1.jpg')}}"
-                                                alt="Avater"
-                                            />
-                                        </div>
-                                        <p class="testi-box_text">
-                                            “Quickly maximize visionary
-                                            solutions after mission critical
-                                            action items productivate premium
-                                            portals for impactful -services
-                                            stinctively negotiate enabled niche
-                                            markets via growth strategies”
-                                        </p>
-                                    </div>
-                                    <div class="testi-box_bottom">
-                                        <div>
-                                            <h3 class="testi-box_name">
-                                                David H. Smith
-                                            </h3>
-                                            <span class="testi-box_desig"
-                                                >IT Student</span
-                                            >
-                                        </div>
-                                        <div class="testi-box_review">
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            (4.7)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="testi-box">
-                                    <div class="testi-box-bg-shape">
-                                        <svg
-                                            width="150"
-                                            height="137"
-                                            viewBox="0 0 150 137"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M0 9.99951C0 4.47666 4.47715 -0.000488281 10 -0.000488281H140C145.523 -0.000488281 150 4.47666 150 9.99951V10.5803C150 13.3951 148.814 16.0796 146.732 17.9747L18.8619 134.394C17.0205 136.07 14.6199 137 12.1297 137H10C4.47715 137 0 132.522 0 127V9.99951Z"
-                                                fill="#0D5EF4"
-                                            />
-                                        </svg>
-                                    </div>
-                                    <div class="testi-box_content">
-                                        <div class="testi-box_img">
-                                            <img
-                                                src="{{asset('assets/img/testimonial/testi_1_2.jpg')}}"
-                                                alt="Avater"
-                                            />
-                                        </div>
-                                        <p class="testi-box_text">
-                                            “Quickly maximize visionary
-                                            solutions after mission critical
-                                            action items productivate premium
-                                            portals for impactful -services
-                                            stinctively negotiate enabled niche
-                                            markets via growth strategies”
-                                        </p>
-                                    </div>
-                                    <div class="testi-box_bottom">
-                                        <div>
-                                            <h3 class="testi-box_name">
-                                                Zara Head Milan
-                                            </h3>
-                                            <span class="testi-box_desig"
-                                                >Regular Student</span
-                                            >
-                                        </div>
-                                        <div class="testi-box_review">
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            <i
-                                                class="fa-solid fa-star-sharp"
-                                            ></i>
-                                            (4.7)
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="overflow-hidden space" id="blog-sec">
+        {{-- <section class="overflow-hidden space" id="blog-sec">
             <div class="container">
                 <div class="mb-35 text-center text-md-start">
                     <div class="row align-items-center justify-content-between">
@@ -3544,17 +3146,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         
         <div class="space-bottom" id="contact-sec">
             <div class="container">
                 <div class="map-sec">
                     <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.7310056272386!2d89.2286059153658!3d24.00527418490799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe9b97badc6151%3A0x30b048c9fb2129bc!2sthemeholy!5e0!3m2!1sen!2sbd!4v1651028958211!5m2!1sen!2sbd"
-                            allowfullscreen=""
-                            loading="lazy"
-                        ></iframe>
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.4529810042322!2d78.73501647504409!3d10.929114689229067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf7316aaaaaab%3A0xb794422e551a89ad!2sK%20Ramakrishnan%20College%20of%20Engineering%20(KRCE)!5e0!3m2!1sen!2sin!4v1739421016871!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                     </div>
                 </div>
                 <div class="row">
@@ -3580,9 +3179,9 @@
                                     <a
                                         href="https://www.google.com/maps"
                                         class="contact-feature_link"
-                                        >2690 Hiltona Street Victoria Road,<br />New
-                                        York, Canada</a
+                                        >NH 45, Samayapuram, Tiruchirappalli,<br />TamilNadu 621112</a
                                     >
+                                     
                                 </div>
                             </div>
                             <div class="contact-feature">
@@ -3594,18 +3193,44 @@
                                         Phone Number
                                     </p>
                                     <a
-                                        href="tel:+011456586986"
+                                        href="tel:+917373284777"
                                         class="contact-feature_link"
                                         >Mobile:<span
-                                            >(+65) - 48596 - 5789</span
+                                            > +91 73732 84777</span
                                         ></a
                                     >
                                     <a
-                                        href="tel:+011456586986"
+                                        href="tel:+9104312670699"
                                         class="contact-feature_link"
                                         >Phone:
-                                        <span>(+00) - 12543 - 4165</span></a
+                                        <span>+91 0431 - 2670699</span></a
                                     >
+
+                                </div>
+                            </div>
+
+                            <div class="contact-feature">
+                                <div class="contact-feature-icon">
+                                    <i class="fal fa-mail"></i>
+                                </div>
+                                <div class="media-body">
+                                    <p class="contact-feature_label">
+                                        E-mail
+                                    </p>
+                                    <a
+                                        href="mailto:principal@krce.ac.in"
+                                        class="contact-feature_link"
+                                        >Principal:<span
+                                            > principal@krce.ac.in</span
+                                        ></a
+                                    >
+                                    <a
+                                        href="mailto:placement@krgi.in"
+                                        class="contact-feature_link"
+                                        >Placement:
+                                        <span>placement@krgi.in</span></a
+                                    >
+
                                 </div>
                             </div>
                             <div class="contact-feature">
@@ -3617,10 +3242,10 @@
                                         Hours of Operation
                                     </p>
                                     <span class="contact-feature_link"
-                                        >Monday - Friday: 09:00 - 20:00</span
+                                        >Monday - Friday: 09:00 - 17:00</span
                                     >
                                     <span class="contact-feature_link"
-                                        >Sunday & Saturday: 10:30 - 22:00</span
+                                        >Sunday & Saturday: Leave</span
                                     >
                                 </div>
                             </div>

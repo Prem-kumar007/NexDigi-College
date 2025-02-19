@@ -30,7 +30,7 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                     <a
                         href="tel%2b11234567890.html"
                         class="footer-contact_link"
-                        >+256 214 203 215</a
+                        >+91 0431-2670699</a
                     >
                 </div>
             </div>
@@ -41,12 +41,12 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                 </div>
                 <div class="media-body">
                     <p class="footer-contact_text">
-                        Email us 24/7 hours:
+                        Email us:
                     </p>
                     <a
-                        href="mailto:info@edura.com"
+                        href="mailto: principal@krce.ac.in"
                         class="footer-contact_link"
-                        >info@edura.com</a
+                        > principal@krce.ac.in</a
                     >
                 </div>
             </div>
@@ -57,12 +57,12 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                 </div>
                 <div class="media-body">
                     <p class="footer-contact_text">
-                        Our university location:
+                        Our College Location:
                     </p>
                     <a
                         href="https://www.google.com/maps"
                         class="footer-contact_link"
-                        >147/I, Green Road, Dhaka</a
+                        >&nbsp; Samayapuram, Tiruchirappalli</a
                     >
                 </div>
             </div>
@@ -77,17 +77,14 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                     <div class="widget footer-widget">
                         <div class="th-widget-about">
                             <div class="about-logo">
-                                <a href="index.html"
+                                <a href="index.html"    
                                     ><img
-                                        src="{{asset('assets/img/logo-white.svg')}}"
+                                        src="{{asset('assets/custom/kr_logo.png')}}"
                                         alt="Edura"
                                 /></a>
                             </div>
                             <p class="about-text">
-                                Continually optimize backward
-                                manufactured products whereas
-                                communities negotiate life
-                                compelling alignments
+                                We achieve a prominent position among the top technical institutions
                             </p>
                             <div class="th-social">
                                 <h6 class="title text-white">
@@ -124,40 +121,46 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                         <div class="menu-all-pages-container">
                             <ul class="menu">
                                 <li>
+                                    <a href="course.html">Anti Ragging Committee</a>
+                                </li>
+                                <li>
+                                    <a href="course.html">Audited Statements</a>
+                                </li>
+                                <li>
                                     <a href="course.html"
-                                        >Life Coach</a
+                                        >Downloads</a
                                     >
                                 </li>
                                 <li>
                                     <a href="course.html"
-                                        >Business Coach</a
+                                        >Environmental Policy</a
                                     >
                                 </li>
                                 <li>
                                     <a href="course.html"
-                                        >Health Coach</a
+                                        >Grievance Redressal Cell</a
                                     >
                                 </li>
                                 <li>
                                     <a href="course.html"
-                                        >Development</a
+                                        >IQAC</a
                                     >
                                 </li>
                                 <li>
                                     <a href="course.html"
-                                        >Web Design</a
+                                        >IIC</a
                                     >
                                 </li>
                                 <li>
                                     <a href="course.html"
-                                        >SEO Optimize</a
+                                        >IQAC</a
                                     >
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-auto">
+                <div class="col-md-4 col-xl-auto">
                     <div
                         class="widget widget_nav_menu footer-widget"
                     >
@@ -166,47 +169,74 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                             <ul class="menu">
                                 <li>
                                     <a href="contact.html"
-                                        >Community</a
+                                        >IEEE Xplore</a
                                     >
                                 </li>
                                 <li>
                                     <a href="contact.html"
-                                        >Support</a
+                                        >DELNET</a
                                     >
                                 </li>
                                 <li>
                                     <a href="contact.html"
-                                        >Video Guides</a
+                                        >Springer</a
                                     >
                                 </li>
                                 <li>
                                     <a href="contact.html"
-                                        >Documentation</a
+                                        >UBA</a
                                     >
                                 </li>
-                                <li>
-                                    <a href="contact.html"
-                                        >Security</a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="contact.html"
-                                        >Template</a
-                                    >
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xxl-3 col-xl-3">
+                <div class="col-md-4 col-xl-auto">
+                    <div
+                        class="widget widget_nav_menu footer-widget"
+                    >
+                        <h3 class="widget_title">Portal Links</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li>
+                                    <a href="contact.html"
+                                        >Faculty ERP login</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        >Maintenance Work Registration</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        >MyCamu</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        >KRCE OPAC</a
+                                    >
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xxl-3 col-xl-3">
                     <div
                         class="widget newsletter-widget footer-widget"
                     >
-                        <h3 class="widget_title">Get in touch!</h3>
-                        <p class="footer-text">
-                            Subscribe our newsletter to get our
-                            latest Update & news
-                        </p>
+                    <h3 class="widget_title">Get in Touch!</h3>
+                    <p class="footer-text">
+                        Have any questions or inquiries? Feel free to reach out to me anytime. I'd love to connect with you!
+                    </p>
+                    <p class="footer-contact">
+                        📧 Email: principal@krce.ac.in <br>
+                        📞 Phone: +91 0431-2670699
+                    </p>
+                    
                         <form class="newsletter-form form-group">
                             <input
                                 class="form-control"
@@ -219,7 +249,7 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
                                 type="submit"
                                 class="th-btn style3"
                             >
-                                Subscribe Now
+                                Send Mail to Us
                                 <i
                                     class="far fa-arrow-right ms-1"
                                 ></i>
@@ -237,9 +267,10 @@ data-bg-src="{{asset('assets/img/bg/footer-bg.png')}}"
             >
                 <div class="col-md-6">
                     <p class="copyright-text">
-                        Copyright © 2023
-                        <a href="index.html">Edura</a> All Rights
+                        Copyright © {{date("Y")}}
+                        <a href="index.html">K. Ramakrishnan college of Engineering</a> All Rights
                         Reserved.
+
                     </p>
                 </div>
                 <div class="col-md-6 text-end d-none d-md-block">

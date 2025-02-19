@@ -3,6 +3,16 @@
         Options -MultiViews -Indexes
     </IfModule>
 
+    # Block access to .env file
+    <FilesMatch "^\.env">
+        Require all denied
+    </FilesMatch>
+
+    # Block access to other sensitive files
+    <FilesMatch "(^\.git|composer\.(json|lock)|artisan|server\.php|phpunit\.xml)">
+        Require all denied
+    </FilesMatch>
+
     RewriteEngine On
 
     # Handle Authorization Header

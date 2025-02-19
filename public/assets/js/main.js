@@ -834,13 +834,7 @@
     }),
     t(".counter-list").length && t(".counter-list").countdown(),
     t(".single-select").length && t(".single-select").niceSelect(),
-    window.addEventListener(
-      "contextmenu",
-      function (t) {
-        t.preventDefault();
-      },
-      !1
-    ),
+  
 
     (document.onkeydown = function (t) {
       return (
