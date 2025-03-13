@@ -2200,6 +2200,7 @@
                 </div>
             </div>
         </div>
+        {{--
         <section class="cta-area-2 position-relative space-bottom">
             <div
                 class="cta-bg-img"
@@ -2260,6 +2261,7 @@
                 </div>
             </div>
         </section>
+        --}}
         <div class="team-area overflow-hidden space" id="team-sec">
             <div
                 class="shape-mockup team-bg-shape1 jump-reverse d-xxl-block d-none"
@@ -3423,7 +3425,7 @@
                     submitHandler: function (form) {
                         alert("Form submitted successfully!");
                         form.submit(); // You can replace this with an AJAX request if needed
-                  }
+                  } 
                 });
             });
               
